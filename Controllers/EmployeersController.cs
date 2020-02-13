@@ -10,28 +10,26 @@ namespace ASP.NET_Shipov.Controllers
 {
     public class EmployeersController : ApiController
     {
-        Employeers[] employeers = new Employeers[]
+        EmpSettings emp = new EmpSettings();
+
+        [Route("getlist")]
+        public List<Employeers> Get()
         {
-            new Employeers { ID = 1, Name = "Петр", Salary = 40000, DepName = "Тех" },
-            new Employeers { ID = 2, Name = "Михаил", Salary = 30000, DepName = "Мед"  },
-            new Employeers { ID = 3, Name = "Александр", Salary = 50000, DepName = "Авто"},
-            new Employeers { ID = 4, Name = "Николай", Salary = 45000, DepName = "Тех" },
-            new Employeers { ID = 5, Name = "Анастасия", Salary = 38000, DepName = "Мед" },
-            new Employeers { ID = 6, Name = "Елена", Salary = 43000, DepName = "Авто" },
-        };
-        public IEnumerable<Employeers> GetAllProducts()
-        {
-            return employeers;
-        }
-        public IHttpActionResult GetProduct(int id)
-        {
-            var employee = employeers.FirstOrDefault((emp) => emp.ID == id);
-            if (employee == null)
-            {
-                return NotFound();
-            }
-            return Ok(employee);
+            return emp.GetList();
         }
 
+        [Route("getlist/{id}")]
+        public Employeers GetPeople(int id)
+        {
+            return emp.GetEmpById(id);
+        }
+
+        [Route("addpeople")]
+        public HttpResponseMessage Post([FromBody]Employeers value)
+        {
+            if (emp.AddEmployeers(value))
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else return Request.CreateResponse(HttpStatusCode.BadRequest);
+        }
     }
 }

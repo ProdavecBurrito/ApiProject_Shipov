@@ -66,3 +66,7 @@ C:\Users\shipo\source\repos\ASP.NET_Shipov\bin\ru\System.Web.Http.WebHost.resour
 C:\Users\shipo\source\repos\ASP.NET_Shipov\obj\Debug\ASP.NET_Shipov.csproj.CopyComplete
 C:\Users\shipo\source\repos\ASP.NET_Shipov\obj\Debug\ASP.NET_Shipov.dll
 C:\Users\shipo\source\repos\ASP.NET_Shipov\obj\Debug\ASP.NET_Shipov.pdb
+C:\Users\shipo\source\repos\ASP.NET_Shipov\bin\WpfProject_Shipov.exe
+C:\Users\shipo\source\repos\ASP.NET_Shipov\bin\WpfProject_Shipov.pdb
+C:\Users\shipo\source\repos\ASP.NET_Shipov\bin\WpfProject_Shipov.exe.config
+C:\Users\shipo\source\repos\ASP.NET_Shipov\obj\Debug\ASP.NET_Shipov.csprojAssemblyReference.cache
